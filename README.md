@@ -47,7 +47,7 @@ venv/bin/python print_text.py "First line\nSecond line"
 ## Reverse engineering steps
 We are sniffing the Bluetooth initialization from "Printer Master" with Android bluetooth debugging and Wireshark (see https://www.wireshark.org/docs/man-pages/androiddump.html). tl;dr: If debugging is enabled in developer options and the phone is connected via ADB, Wireshark will display the bluetooth interface to create a capture file.
 
-Looking at the pcap file, the printer seemsto use the ESC/POS protocol by Epson. The init string that is sent right before the image data contains the paper size:
+Looking at the pcap file, the printer seems to use the ESC/POS protocol by Epson. The init string that is sent right before the image data contains the paper size:
 ```1f1124001b401d7630000c004001```
 (see [theacodes/phomemo_m02s/printer.py](https://github.com/theacodes/phomemo_m02s/blob/main/phomemo_m02s/printer.py))
 
